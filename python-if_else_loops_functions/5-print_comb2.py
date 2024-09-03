@@ -5,4 +5,4 @@ for i in range(0, 100):
         print("{}".format(i))
 # print til 9 int to digit expl"01"
     else:
-        print("{:02}".format(i), end=', ')
+        print("{:02}".format(i), end=", ")
