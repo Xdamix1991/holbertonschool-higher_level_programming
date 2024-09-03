@@ -5,6 +5,5 @@ for i in range(0, 100):
         print(f"0{i}",end=', ' if i < 9 else'')
 
     else:
-        print(i, end=', ' if i < 99 else '')
-print()
+        print(i, end=', ' if i < 99 else '\n')
 
