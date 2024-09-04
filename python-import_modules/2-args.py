@@ -2,7 +2,7 @@
 import sys
 
 
-def print_arguments():
+def print_argv():
     number = len(sys.argv) - 1
     if number == 0:
         print("0 arguments.")
@@ -16,4 +16,4 @@ def print_arguments():
 
 
 if __name__ == "__main__":
-    print_arguments()
+    print_argv()
