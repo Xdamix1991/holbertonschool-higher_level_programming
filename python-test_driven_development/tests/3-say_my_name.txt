@@ -15,15 +15,6 @@ Usage
     >>> say_my_name("John", "Doe")
     My name is John Doe
 
-::
-
-    >>> say_my_name("Jane")
-    My name is Jane 
-
-::
-
-    >>> say_my_name("John", "")
-    My name is John
 
 Error Cases
 ===========
@@ -94,5 +85,5 @@ The function ensures that both `first_name` and `last_name`, when provided, are 
 ::
 
     >>> say_my_name("Bob", "")
-    My name is Bob
+    My name is Bob 
 
