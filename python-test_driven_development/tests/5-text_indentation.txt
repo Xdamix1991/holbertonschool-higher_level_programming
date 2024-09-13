@@ -1,0 +1,138 @@
+===========================
+How to Use 5-text_indentation.py
+===========================
+
+This module defines a function to print a text with 2 new lines after each of these characters: ., ? and :
+
+Usage
+=====
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Normal String
+=============
+
+::
+
+    >>> text_indentation("Hello. How are you? I'm fine: thank you.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I'm fine:
+    <BLANKLINE>
+    thank you.
+    <BLANKLINE>
+
+String with Multiple Spaces
+===========================
+
+::
+
+    >>> text_indentation("Hello.   How are you?    I'm fine:   thank you.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I'm fine:
+    <BLANKLINE>
+    thank you.
+    <BLANKLINE>
+
+String with No Special Characters
+=================================
+
+::
+
+    >>> text_indentation("This is a simple string without any special characters")
+    This is a simple string without any special characters
+
+Empty String
+============
+
+::
+
+    >>> text_indentation("")
+
+String with Only Special Characters
+===================================
+
+::
+
+    >>> text_indentation(".:?:.")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+Non-String Input
+================
+
+``text_indentation()`` raises a TypeError if the input is not a string.
+
+::
+
+    >>> text_indentation(12345)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(["Hello", "World"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Missing Arguments
+=================
+
+``text_indentation()`` raises a TypeError if no argument is provided.
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+String with Special Characters at the End
+=========================================
+
+::
+
+    >>> text_indentation("Hello. World:")
+    Hello.
+    <BLANKLINE>
+    World:
+    <BLANKLINE>
+
+String with Multiple Consecutive Special Characters
+===================================================
+
+::
+
+    >>> text_indentation("Hello... World??? Test:::")
+    Hello.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    Test:
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
