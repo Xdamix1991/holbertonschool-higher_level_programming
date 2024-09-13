@@ -70,3 +70,15 @@ String Values
     >>> print_square("hello")
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+
+	Missing Arguments
+=================
+
+``print_square()`` raises a TypeError if no argument is provided.
+
+::
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
