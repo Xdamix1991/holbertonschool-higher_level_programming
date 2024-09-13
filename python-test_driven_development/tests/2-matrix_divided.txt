@@ -12,9 +12,9 @@ Usage
 ::
 
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-    >>> matrix = [[1, 2, 3], [4, 5, 6]]
-    >>> matrix_divided(matrix, 2)
-    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+    >>> matrix = [[0, 0, 0], [0, 0, 0]]
+    >>> matrix_divided(matrix, 6.5)
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 ::
 
@@ -30,9 +30,28 @@ Usage
 
 ::
 
-    >>> matrix = [[5, 10, 15], [20, 25, 30]]
-    >>> matrix_divided(matrix, 5)
-    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+# Test for div as infinity
+::
+
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
+# Test for missing one argument
+::
+
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# Test for missing both arguments
+::
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
 
 ::
 
