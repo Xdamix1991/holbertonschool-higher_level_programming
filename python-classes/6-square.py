@@ -45,13 +45,9 @@ class Square:
         return area
 
     def my_print(self):
-        if self.size == 0:
-            print()
+
         for i in range(self.__postion[1]):
             print()
 
         for i in range(self.__size):
-            if self.__postion[1] > 0:
-                print("#" * self.__size)
-            else:
-                print(" " * self.__postion[0] + "#" * self.__size)
+            print(" " * self.__postion[0] + "#" * self.__size)
