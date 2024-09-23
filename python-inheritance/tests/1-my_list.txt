@@ -1,0 +1,38 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+>>> my_list = MyList([1, [2], 3])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: must be an integer
+
+>>> my_list = MyList([1, 'a', 2])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: must be an integer
+
+>>> my_list = MyList(["a string"])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: must be an integer
+
+
+>>> my_list = MyList([1.5, 2.3, 3.1])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: must be an integer
