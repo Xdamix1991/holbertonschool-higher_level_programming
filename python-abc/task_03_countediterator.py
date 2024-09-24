@@ -5,6 +5,9 @@ in this module you ll find a class CountedIterator
 
 
 class CountedIterator:
+    """
+    class doing iteration
+    """
 
     def __init__(self, obj):
         self.obj = obj
