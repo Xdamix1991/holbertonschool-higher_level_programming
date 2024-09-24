@@ -51,3 +51,12 @@ def shape_info(arg):
     per = arg.perimeter()
     print("ar is {}".format(ar))
     print("per is {}".format(per))
+
+
+if __name__ == "__main__":
+
+    circle = Circle(5)
+    rectangle = Rectangle(5, 2)
+
+    shape_info(circle)
+    shape_info(rectangle)
