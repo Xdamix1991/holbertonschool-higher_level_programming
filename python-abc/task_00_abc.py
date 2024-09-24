@@ -11,10 +11,6 @@ class Animal(ABC):
     """
 
     @abstractmethod
-    def __init__(self, sound):
-        self.__sound = sound
-
-    @abstractmethod
     def sound(self):
         pass
 
@@ -24,15 +20,9 @@ class Dog(Animal):
     substract class from Animal
     """
 
-    def __init__(self):
-        super().__init__("Bark")
-
     def sound(self):
-        return self._Animal__sound
-
-    def __str__(self):
-        sound_dog = str("{}".format(self.sound))
-        return sound_dog
+        self.__sound = "Bark"
+        return self.__sound
 
 
 class Cat(Animal):
@@ -40,12 +30,6 @@ class Cat(Animal):
     substract class from Animal
     """
 
-    def __init__(self):
-        super().__init__("Meow")
-
     def sound(self):
-        return self._Animal__sound
-
-    def __str__(self):
-        sound_cat = str("{}".format(self.sound))
-        return sound_cat
+        self.__sound = "Meow"
+        return self.__sound
