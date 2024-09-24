@@ -29,7 +29,7 @@ class Circle(Shape):
         return result
 
     def perimeter(self):
-        return math.pi * self.radius * 2
+        return abs(math.pi * self.radius * 2)
 
 
 class Rectangle(Shape):
@@ -43,7 +43,7 @@ class Rectangle(Shape):
         return result
 
     def perimeter(self):
-        return 2 * (self.height + self.width)
+        return abs(2 * (self.height + self.width))
 
 
 def shape_info(arg):
