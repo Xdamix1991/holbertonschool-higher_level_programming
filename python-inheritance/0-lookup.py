@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 """
-contains a module to iterate and return what in an object
+This module provides a function to lookup attribute
+and methods of an object.
 """
 
 
 def lookup(obj):
     """
-    function to look up on attributr and methodes on an object
-    returns:
-        list
+    Returns a list of available attributes and methods of an object.
+    Args:
+        obj: The object to inspect.
+    Returns:
+        A list of strings representing the attributes
+        and methods of the object.
     """
-
     return dir(obj)
