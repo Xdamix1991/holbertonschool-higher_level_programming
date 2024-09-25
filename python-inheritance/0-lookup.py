@@ -8,5 +8,5 @@ def lookup(obj):
     """
 function to look up on attributr and methodes on an object
 """
-    list = dir(obj)
-    return list
+
+    return dir(obj)
