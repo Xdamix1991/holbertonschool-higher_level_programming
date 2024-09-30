@@ -2,7 +2,6 @@
 """
 in this module function that generate pascal triangle
  """
-import math
 
 
 def pascal_triangle(n):
