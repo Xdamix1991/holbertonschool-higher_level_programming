@@ -24,6 +24,7 @@ class CustomObject:
         try:
             with open(filename, 'wb') as f:
                 pickle.dump(self, f)
+            return True
         except Exception as e:
             raise Exception("file can't be writen")
             return None
@@ -36,6 +37,9 @@ class CustomObject:
         try:
             with open(filename, 'rb') as f:
                 return pickle.load(f)
+        except FileNotFoundError:
+            raise FileNotFoundError("file not found")
+            return None
         except Exception as e:
-            raise Exception("cant load the file")
+            print("cant load the file")
             return None
