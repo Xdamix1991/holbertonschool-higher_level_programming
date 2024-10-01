@@ -12,7 +12,10 @@ def save_to_json_file(my_obj, filename):
     filename:
         to put the object into
     """
+
     objects = json.dumps(my_obj)
+
     with open(filename, 'w', encoding="utf-8") as f:
         f.write(objects)
-        return objects
+
+    return objects
