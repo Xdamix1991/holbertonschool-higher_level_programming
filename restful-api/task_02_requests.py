@@ -14,7 +14,7 @@ def fetch_and_print_posts():
     """
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
     stat = r.status_code
-    print("{}".format(stat))
+    print("Status Code: {}".format(stat))
 
     if stat == 200:
         data_json = r.json()
