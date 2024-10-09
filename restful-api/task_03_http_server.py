@@ -20,9 +20,8 @@ class Run(http.server.BaseHTTPRequestHandler):
 
         if self.path == '/':
             self.send_response(200)
-            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write("“Hello, this is a simple API!”".encode())
+            self.wfile.write("Hello, this is a simple API!".encode())
 
         elif self.path == '/data':
             data = {"name": "John", "age": 30, "city": "New York"}
@@ -33,20 +32,19 @@ class Run(http.server.BaseHTTPRequestHandler):
 
         elif self.path == '/status':
             self.send_response(200)
-            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write("OK".encode())
 
         elif self.path == '/info':
             data_info = {"version": "1.0",
                          "description": "A simple API built with http.server"}
+            self.send_header('Content-type', 'application/json')
             self.send_response(200)
             self.end_headers()
             self.wfile.write(json.dumps(data_info).encode())
 
         else:
             self.send_response(404)
-            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write("Endpoint not found".encode())
 
