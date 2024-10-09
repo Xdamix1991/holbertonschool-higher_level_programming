@@ -7,7 +7,7 @@ import socketserver
 import json
 
 
-class Run(http.server.BaseHTTPRequestHandler):
+class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
     """
     this class a simple server
     """
@@ -47,5 +47,5 @@ class Run(http.server.BaseHTTPRequestHandler):
 PORT = 8000
 server_adress = ('', PORT)
 server = http.server.HTTPServer
-httpd = server(server_adress, Run)
+httpd = server(server_adress, SimpleAPIHandler)
 httpd.serve_forever()
