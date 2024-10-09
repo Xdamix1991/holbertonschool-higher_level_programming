@@ -44,8 +44,9 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write("404 Not Found".encode('utf-8'))
 
 
-PORT = 8000
-server_adress = ('', PORT)
-server = http.server.HTTPServer
-httpd = server(server_adress, SimpleAPIHandler)
-httpd.serve_forever()
+if __name__ == "__main__":
+    PORT = 8000
+    server_adress = ('', PORT)
+    server = http.server.HTTPServer
+    httpd = server(server_adress, SimpleAPIHandler)
+    httpd.serve_forever()
