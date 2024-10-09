@@ -3,7 +3,6 @@
 web server
 """
 import http.server
-import socketserver
 import json
 
 
@@ -11,6 +10,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
     """
     this class a simple server
     """
+
     def do_GET(self):
         """
         function to handle the server and the requsts
