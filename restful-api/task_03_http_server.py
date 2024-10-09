@@ -39,7 +39,7 @@ class Run(http.server.BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
-            self.wfile.write("NOT FOUND".encode('utf-8'))
+            self.wfile.write("404 Not Found".encode('utf-8'))
 
 
 PORT = 8000
