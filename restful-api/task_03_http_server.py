@@ -12,6 +12,10 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
     this class a simple server
     """
     def do_GET(self):
+        """
+        function to handle the server and the requsts
+        """
+
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
