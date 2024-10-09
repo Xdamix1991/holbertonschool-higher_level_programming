@@ -42,7 +42,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write("OK".encode('utf-8'))
+            self.wfile.write("OK".encode())
         else:
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
