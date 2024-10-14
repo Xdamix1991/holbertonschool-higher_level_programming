@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 this module contains a simple api created with flask
 """
@@ -38,15 +39,19 @@ def get_users(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-    if not data or 'username' not in data or 'name' not in data:
+    if'username' not in data:
         return jsonify({"error": "Username is required"}), 400
     username = data['username']
     users[username] = {
-        "name": data['name'],
+        "username": data.get('username'),
+        "name": data.get('name'),
         "age": data.get('age'),
-        "city": data.get('city'),
+        "city": data.get('city')
     }
-    return jsonify({"message": "User added", "user": users[username]}), 201
+    return jsonify({
+        "message": "User added",
+        "user": users[username]
+    }), 201
 
 
 if __name__ == "__main__":
