@@ -4,4 +4,4 @@ SELECT cities.name
 from cities, states
 WHERE states.id = cities.state_id
 AND states.name = 'California'
-ORDER BY cties.name DESC;
+ORDER BY cties.name ASC;
