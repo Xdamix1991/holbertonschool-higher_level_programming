@@ -1,3 +1,2 @@
--- script to show databases
--- lists all the databases in sql server
+-- script to show databases.
 SHOW DATABASES;
