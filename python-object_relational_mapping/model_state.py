@@ -2,6 +2,7 @@
 """
 this module contains the class definition of a State
  """
+
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
@@ -14,3 +15,6 @@ class State(Base):
 
     id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
+
+    def __repr__(self):
+        return "<State(name='%s')>"%(self.name)
