@@ -20,8 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).filter(State.id.like('1'))
-    for row in query.all():
-        print("%s: %s" % (row.id, row.name))
+    query = session.query(State).filter(State.id.like('1')).first()
+    if query:
+        print("%s: %s" % (query.id, query.name))
+    else:
+        print("Nothing")
 
     session.close()
