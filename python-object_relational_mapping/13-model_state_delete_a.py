@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     stmt = (
         delete(State).
-        where(State.name.like('%a'))
+        where(State.name.like('%a%'))
     )
 
     session.execute(stmt)
