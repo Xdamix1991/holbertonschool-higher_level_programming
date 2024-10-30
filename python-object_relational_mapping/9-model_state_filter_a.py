@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).filter(
-        State.name.like('%a')).order_by(State.id)
+        State.name.like('%a%')).order_by(State.id)
     rows = query.all()
     for row in rows:
         print("{}: {}".format(row.id, row.name))
