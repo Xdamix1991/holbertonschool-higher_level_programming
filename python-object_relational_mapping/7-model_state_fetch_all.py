@@ -19,4 +19,4 @@ if __name__ == "__main__":
     session = Session()
 
     for row in session.query(State).all():
-        print("{}: {}".format(row.id, row.name))
+        print("%s: %s" % (row.id, row.name))
