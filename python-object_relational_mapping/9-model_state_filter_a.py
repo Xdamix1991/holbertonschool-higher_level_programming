@@ -3,7 +3,7 @@
 script that lists all State objects that contain the letter 'a'
 from the database hbtn_0e_6_usa
  """
-
+from sqlalchemy import func
 import sys
 from model_state import State, Base
 from sqlalchemy.orm import sessionmaker
@@ -22,7 +22,10 @@ if __name__ == "__main__":
     query = session.query(State).filter(
         State.name.like('%a')).order_by(State.id)
     rows = query.all()
-    for row in rows:
-        print("{}: {}".format(row.id, row.name))
+    if rows:
+        for row in rows:
+            print("{}: {}".format(row.id, row.name))
+    else:
+        print("Nothing")
 
     session.close()
