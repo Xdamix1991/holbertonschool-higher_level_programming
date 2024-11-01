@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 
 from model_state import Base, State
 
+
 class City(Base):
     """
     class cities inherating from base
@@ -19,4 +20,3 @@ class City(Base):
                 nullable=False, unique=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-
