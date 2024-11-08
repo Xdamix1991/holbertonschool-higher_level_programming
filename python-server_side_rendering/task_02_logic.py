@@ -21,13 +21,13 @@ def contact():
 
 @app.route('/items')
 def items():
-    with open("items.json", "r") as f:
-        result = json.load(f)
-        if not result:
-            raise ValueError("empty items")
-        items = result.get('items', [])
+    try:
+        with open('items.json') as f:
+            data = json.load(f)
+            items = data.get("items", [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        items = []
     return render_template('items.html', items=items)
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
