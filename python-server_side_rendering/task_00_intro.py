@@ -25,7 +25,7 @@ def generate_invitations(template, attendees):
 
     placeholders = re.findall(r'\{(.*?)\}', template)
 
-    for index, attendee in enumerate(attendees):
+    for index, attendee in enumerate(attendees, start=1):
         result_str = template
         for placeholder in placeholders:
             value = attendee.get(placeholder, "N/A")
