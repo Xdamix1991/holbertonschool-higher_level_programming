@@ -7,11 +7,21 @@ import re
 
 def generate_invitations(template, attendees):
 
-    if not template or not isinstance(template, str):
-        raise TypeError("template must be a string")
+    if not template:
+        print("Erreur : Template is empty, no output files generated.")
+        return
+    elif not isinstance(template, str):
+        print("Erreur : Invalid template type, expected a string.")
+        return
 
-    if not attendees or not isinstance(attendees, list):
-        raise TypeError("attendees must be a list")
+    if not attendees:
+        print("Erreur : No data provided, no output files generated.")
+        return
+    elif not isinstance(attendees, list) or not all(
+                isinstance(attendee, dict) for attendee in attendees):
+        print("Erreur : Invalid attendees type,"
+              "expected a list of dictionaries.")
+        return
 
     placeholders = re.findall(r'\{(.*?)\}', template)
 
